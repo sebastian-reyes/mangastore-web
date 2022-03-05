@@ -1,0 +1,43 @@
+<section class="sesion">
+    <div class="sesion-container">
+        <div class="sesion-info">
+            <div class="container mt-4">
+                <h1 class="text-center">漫画</h1>
+                <h2 class="text-center">Mangastore</h2>
+                <ul class="list-unstyled ms-4">
+                    <li>
+                        <span class="ms-2">Av. Tingo María 435 - Breña</span>
+                    </li>
+                    <li>
+                        <span class="ms-2">ventas@mangastore.com</span>
+                    </li>
+                    <li>
+                        <span class="ms-2">971 150 368</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sesion-form">
+            <div data-aos="zoom-in">
+                <h1 class="text-center fw-bold">Iniciar Sesión</h1>
+                <div class="form-box">
+                    <div class="container col-lg-8">
+                        <form class="needs-validation" method="POST">
+                            <label class="form-label">Correo:</label>
+                            <input [(ngModel)]="usuario.email" type="text" class="form-control mb-3" name="correo"
+                                placeholder="Ingrese su correo">
+                            <label class="form-label">Contraseña:</label>
+                            <input [(ngModel)]="usuario.password" type="password" class="form-control mb-3"
+                                name="password" placeholder="Ingrese su contraseña">
+                            <input (click)="login()" class="btn btn-sesion mb-3 w-100" type="submit"
+                                value="Iniciar Sesión" />
+                            <span>Aún no estás registrado? <span class="login-registro"
+                                    (click)="LoginRegistro()">Registrate
+                                    aquí</span></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

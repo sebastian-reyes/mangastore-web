@@ -1,0 +1,123 @@
+.sesion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #c0c0c0;
+}
+
+.sesion::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #595959;
+}
+
+.sesion-container {
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+}
+
+.sesion-container .sesion-info {
+    position: absolute;
+    top: 40px;
+    width: 350px;
+    height: calc(100% - 80px);
+    background: #000000;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+    color: #ffffff;
+}
+
+.sesion-container .sesion-info svg {
+    vertical-align: middle;
+}
+
+.sesion-container .sesion-form {
+    position: absolute;
+    padding: 70px 50px;
+    padding-left: 250px;
+    margin-left: 150px;
+    width: calc(100% - 150px);
+    height: 100%;
+    background: #ffffff;
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-sesion {
+    background: #000000;
+    color: #ffffff;
+}
+
+.btn-sesion:hover {
+    background: #ffffff;
+    border-color: #000000;
+    color: #000000;
+}
+
+.login-registro{
+    color: #0000ee;
+    text-decoration: underline;
+}
+
+.login-registro:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 1199.98px) {
+    .search {
+        margin-top: 11px;
+    }
+    .sesion-container {
+        width: 90%;
+        min-width: auto;
+        margin: 20px;
+        box-shadow: 0 50px 50px rgba(0, 0, 0, 0.25);
+    }
+    .sesion-container .sesion-info {
+        top: 0;
+        height: 550px;
+        position: relative;
+        box-shadow: none;
+    }
+    .sesion-container .sesion-form {
+        position: relative;
+        width: calc(100% - 350px);
+        padding-left: 0;
+        margin-left: 0;
+        padding: 40px;
+        height: 550px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sesion::before {
+        background: #c0c0c0;
+        display: none;
+    }
+    .sesion-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .sesion-container .sesion-form {
+        width: 100%;
+        height: auto;
+    }
+    .sesion-container .sesion-info {
+        width: 100%;
+        height: auto;
+    }
+}
