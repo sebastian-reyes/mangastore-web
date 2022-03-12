@@ -2,7 +2,7 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-const urlBase = "https://test-apimanga.herokuapp.com/api";
+const urlBase = "http://localhost:9898/api";
 
 export const environment = {
   production: false,
