@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { FooterComponent } from './pages/clientes/footer/footer.component';
+import { DemografiasComponent } from './pages/clientes/demografias/demografias.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './pages/clientes/footer/footer.component';
     HomeComponent,
     LoginComponent,
     DashboardComponent,
-    FooterComponent
+    FooterComponent,
+    DemografiasComponent
   ],
   imports: [
     BrowserModule,

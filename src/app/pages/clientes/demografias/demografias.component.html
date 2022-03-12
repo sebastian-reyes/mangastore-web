@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<div class="container p-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <h2 class="fw-bold display-5">{{nombre_demografia}}</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active">Demografía</li>
+                    <li class="breadcrumb-item active">{{nombre_demografia}}</li>
+                </ol>
+            </nav>
+            <span>{{cantidad}} mangas.</span>
+        </div>
+        <div class="col-lg-9 mt-4">
+            <div class="container col-lg-12">
+                <div *ngIf="!authService.estaAutenticado()" class="alert alert-danger alert-dismissible fade show"
+                    role="alert">
+                    <strong>Usted no está autenticado! </strong><a class="text-danger" [routerLink]="['/login']">Inicie
+                        sesión</a>
+                    para poder agregar mangas a su carrito.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="container col-lg-9">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Filtros</option>
+                    <option value="1">Menor precio</option>
+                    <option value="2">Mayor precio</option>
+                    <option value="3">A-Z</option>
+                    <option value="3">Z-A</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            <div *ngFor="let manga of mangas" class="col-sm-3">
+                <div class="card mb-3 shadow rounded">
+                    <div class="card-body">
+                        <a class="link-producto" [routerLink]="['/mangas']">
+                            <div class="container-foto mt-2">
+                                <img src="http://localhost:9898/api/mangas/foto/{{manga.id_manga}}"
+                                    alt="{{manga.nombre_manga}}" class="img-fluid">
+                            </div>
+                        </a>
+                        <h5 class="text-center mt-3 fw-bold titulo-producto">{{manga.nombre_manga}}</h5>
+                        <hr />
+                        <button class="btn btn-dark w-100 text-uppercase">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
