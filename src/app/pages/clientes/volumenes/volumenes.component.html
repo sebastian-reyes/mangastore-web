@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="container p-5">
+    <div class="row">
+        <div *ngIf="manga" class="col-lg-12">
+            <h2 class="fw-bold display-5">{{manga.nombre_manga}}</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
+                    <li class="breadcrumb-item"><a
+                            [routerLink]="['/demografia',manga.genero.nombre]">{{manga.genero.nombre}}</a></li>
+                    <li class="breadcrumb-item active">{{manga.nombre_manga}}</li>
+                </ol>
+            </nav>
+            <span>{{cantidad}} volúmenes.</span>
+            <h3 class="mt-3">Sinopsis:</h3>
+            <p>{{manga.sinopsis}}</p>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row">
+            <h3 class="fw-bold">Volúmenes:</h3>
+            <div *ngFor="let volumen of volumenes" class="col-sm-3 mt-3">
+                <div class="card mb-3 shadow rounded">
+                    <div class="card-body">
+                        <a class="link-producto" [routerLink]="['/volumen',volumen.id_volumen]">
+                            <div class="container-foto mt-2 mb-3">
+                                <img src="http://localhost:9898/api/volumen/foto/{{volumen.id_volumen}}"
+                                    alt="{{volumen.nombre_volumen}}" class="img-fluid">
+                            </div>
+                        </a>
+                        <h5 class="text-center mt-1 p-1 fw-bold titulo-producto">{{volumen.nombre_volumen}}</h5>
+                        <span class="ms-3 mb-1">S/{{volumen.precio.toFixed(2)}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

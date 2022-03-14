@@ -19,7 +19,7 @@ export class DemografiasComponent implements OnInit {
     private productoService: ProductoService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    public authService: AuthService,
+    public authService: AuthService
   ) { }
 
   ngOnInit(): void {

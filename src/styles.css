@@ -3,3 +3,7 @@
 *{
     font-family: 'Montserrat', sans-serif;
 }
+
+.bg-dark{
+    background-color: #000000!important;
+}

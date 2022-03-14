@@ -5,7 +5,7 @@
             <h2 class="fw-bold display-5">{{nombre_demografia}}</h2>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item active">Demografía</li>
+                    <li class="breadcrumb-item active"><a [routerLink]="['/home']">Home</a></li>
                     <li class="breadcrumb-item active">{{nombre_demografia}}</li>
                 </ol>
             </nav>
@@ -35,17 +35,16 @@
             <div *ngFor="let manga of mangas" class="col-sm-3">
                 <div class="card mb-3 shadow rounded">
                     <div class="card-body">
-                        <a class="link-producto" [routerLink]="['/mangas']">
+                        <a class="link-producto" [routerLink]="['/catalogo/volumenes',manga.id_manga]">
                             <div class="container-foto mt-2 mb-3">
                                 <img src="http://localhost:9898/api/mangas/foto/{{manga.id_manga}}"
                                     alt="{{manga.nombre_manga}}" class="img-fluid">
                             </div>
                         </a>
-                        <span class="text-muted ms-2 text-uppercase fw-bold ">{{manga.editorial.nombre_editorial}}</span>
+                        <span
+                            class="text-muted ms-2 text-uppercase fw-bold ">{{manga.editorial.nombre_editorial}}</span>
                         <h5 class="text-center mt-1 fw-bold titulo-producto">{{manga.nombre_manga}}</h5>
                         <span class="ms-3 mb-1">{{manga.numero_volumenes}} tomos</span>
-                        <hr />
-                        <button class="btn btn-dark w-100 text-uppercase">Ver más</button>
                     </div>
                 </div>
             </div>

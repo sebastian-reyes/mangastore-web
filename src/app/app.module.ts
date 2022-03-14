@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { FooterComponent } from './pages/clientes/footer/footer.component';
 import { DemografiasComponent } from './pages/clientes/demografias/demografias.component';
+import { VolumenesComponent } from './pages/clientes/volumenes/volumenes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DemografiasComponent } from './pages/clientes/demografias/demografias.c
     LoginComponent,
     DashboardComponent,
     FooterComponent,
-    DemografiasComponent
+    DemografiasComponent,
+    VolumenesComponent
   ],
   imports: [
     BrowserModule,
