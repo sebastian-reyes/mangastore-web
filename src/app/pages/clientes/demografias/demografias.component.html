@@ -24,10 +24,8 @@
             <div class="container col-lg-9">
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Filtros</option>
-                    <option value="1">Menor precio</option>
-                    <option value="2">Mayor precio</option>
-                    <option value="3">A-Z</option>
-                    <option value="3">Z-A</option>
+                    <option value="1">A-Z</option>
+                    <option value="2">Z-A</option>
                 </select>
             </div>
         </div>
@@ -38,12 +36,14 @@
                 <div class="card mb-3 shadow rounded">
                     <div class="card-body">
                         <a class="link-producto" [routerLink]="['/mangas']">
-                            <div class="container-foto mt-2">
+                            <div class="container-foto mt-2 mb-3">
                                 <img src="http://localhost:9898/api/mangas/foto/{{manga.id_manga}}"
                                     alt="{{manga.nombre_manga}}" class="img-fluid">
                             </div>
                         </a>
-                        <h5 class="text-center mt-3 fw-bold titulo-producto">{{manga.nombre_manga}}</h5>
+                        <span class="text-muted ms-2 text-uppercase fw-bold ">{{manga.editorial.nombre_editorial}}</span>
+                        <h5 class="text-center mt-1 fw-bold titulo-producto">{{manga.nombre_manga}}</h5>
+                        <span class="ms-3 mb-1">{{manga.numero_volumenes}} tomos</span>
                         <hr />
                         <button class="btn btn-dark w-100 text-uppercase">Ver más</button>
                     </div>
