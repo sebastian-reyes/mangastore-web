@@ -12,6 +12,7 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { FooterComponent } from './pages/clientes/footer/footer.component';
 import { DemografiasComponent } from './pages/clientes/demografias/demografias.component';
 import { VolumenesComponent } from './pages/clientes/volumenes/volumenes.component';
+import { VolumenComponent } from './pages/clientes/volumen/volumen.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { VolumenesComponent } from './pages/clientes/volumenes/volumenes.compone
     DashboardComponent,
     FooterComponent,
     DemografiasComponent,
-    VolumenesComponent
+    VolumenesComponent,
+    VolumenComponent
   ],
   imports: [
     BrowserModule,

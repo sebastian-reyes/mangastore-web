@@ -68,9 +68,20 @@ export class VolumenesService {
     );
   }
 
-  getManga(id_vol): Observable<Manga>{
-    return this.http.get(`${environment.urlApi}/mangas/${id_vol}`).pipe(
+  getManga(id_manga): Observable<Manga> {
+    return this.http.get(`${environment.urlApi}/mangas/${id_manga}`).pipe(
       map((response) => response as Manga),
+      catchError(e => {
+        if (this.noAutorizado(e)) {
+          return throwError(e);
+        }
+      })
+    );
+  }
+
+  getVolumen(nombre_volumen): Observable<Volumen> {
+    return this.http.get(`${environment.urlApi}/volumen/${nombre_volumen}`).pipe(
+      map((response) => response as Volumen),
       catchError(e => {
         if (this.noAutorizado(e)) {
           return throwError(e);

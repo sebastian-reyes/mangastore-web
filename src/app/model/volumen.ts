@@ -9,6 +9,7 @@ export class Volumen {
     precio: number;
     stock_act: number;
     stock_min: number;
+    url: string;
     foto: string;
     manga: Manga;
 }
