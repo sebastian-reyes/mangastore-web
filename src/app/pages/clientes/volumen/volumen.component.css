@@ -1,8 +1,50 @@
-.text-precio{
+.text-precio {
     font-size: 20px;
     color: green;
 }
 
-.text-agotado{
+.text-agotado {
     font-size: 25px;
+}
+
+.text-recomendaciones {
+    display: inline-block;
+    position: relative;
+    color: #000000;
+}
+
+.text-recomendaciones::after, .text-recomendaciones::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    background-color: currentColor;
+    top: 0.6em;
+}
+
+.text-recomendaciones::before {
+    left: -135px;
+}
+
+.text-recomendaciones::after {
+    right: -135px;
+}
+
+@media (max-width: 767.98px) {
+    .text-recomendaciones::after, .text-recomendaciones::before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        background-color: currentColor;
+        top: 0.6em;
+    }
+
+    .text-recomendaciones::before {
+        left: -40px;
+    }
+
+    .text-recomendaciones::after {
+        right: -40px;
+    }
 }

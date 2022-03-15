@@ -6,7 +6,8 @@
             <li class="breadcrumb-item"><a
                     [routerLink]="['/demografia',volumen.manga.genero.nombre.toLowerCase()]">{{volumen.manga.genero.nombre}}</a>
             </li>
-            <li class="breadcrumb-item"><a [routerLink]="['/catalogo/volumenes',volumen.manga.url]">{{volumen.manga.nombre_manga}}</a>
+            <li class="breadcrumb-item"><a
+                    [routerLink]="['/catalogo/volumenes',volumen.manga.url]">{{volumen.manga.nombre_manga}}</a>
             </li>
             <li class="breadcrumb-item active">{{volumen.nombre_volumen}}</li>
         </ol>
@@ -14,35 +15,43 @@
     <div class="row">
         <div class="col-lg-6 d-flex">
             <div class=" align-self-center">
-                <img src="http://localhost:9898/api/volumen/foto/{{volumen.id_volumen}}" alt="{{volumen.nombre_volumen}}"
-                    class="img-fluid p-4">
+                <img src="http://localhost:9898/api/volumen/foto/{{volumen.id_volumen}}"
+                    alt="{{volumen.nombre_volumen}}" class="img-fluid p-4">
             </div>
         </div>
         <div class="col-lg-6 d-flex">
             <div class="align-self-center">
                 <h2 class="fw-bold display-5">{{volumen.nombre_volumen}}</h2>
                 <span class="text-precio fw-bold">S/. {{volumen.precio.toFixed(2)}}</span>
-                <hr/>
+                <hr />
                 <p>{{volumen.descripcion}}</p>
-                <hr/>
-                <button *ngIf="volumen.stock_act > volumen.stock_min" class="btn btn-success">Agregar al carrito</button>
-                <span *ngIf="volumen.stock_act < volumen.stock_min" class="text-danger fw-bold text-agotado">Producto agotado</span>
+                <hr />
+                <button *ngIf="volumen.stock_act > volumen.stock_min" class="btn btn-success">Agregar al
+                    carrito</button>
+                <span *ngIf="volumen.stock_act < volumen.stock_min" class="text-danger fw-bold text-agotado">Producto
+                    agotado</span>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="card border-dark mb-3 mt-4">
+    <div class="container mt-3">
+        <div class="card border-dark mt-5">
             <div class="card-body text-dark">
-              <h5 class="card-title fw-bold">Detalles del producto</h5>
-              <hr/>
-              <div class="container p-3">
-                <p class="card-text">Autor: <span class="fw-bold">{{volumen.manga.autor.nombre}}</span></p>
-                <p class="card-text">Manga: <span class="fw-bold">{{volumen.manga.nombre_manga}}</span></p>
-                <p class="card-text">Demografía: <span class="fw-bold">{{volumen.manga.genero.nombre}}</span></p>
-                <p class="card-text">Editorial: <span class="fw-bold">{{volumen.manga.editorial.nombre_editorial}}</span></p>
-              </div>
+                <h5 class="card-title fw-bold">Detalles del producto</h5>
+                <hr />
+                <div class="container p-3">
+                    <p class="card-text">Autor: <span class="fw-bold">{{volumen.manga.autor.nombre}}</span></p>
+                    <p class="card-text">Manga: <span class="fw-bold">{{volumen.manga.nombre_manga}}</span></p>
+                    <p class="card-text">N° Volumen: <span class="fw-bold">#{{volumen.n_tomo}}</span></p>
+                    <p class="card-text">Stock: <span class="fw-bold">{{volumen.stock_act}} unidades</span></p>
+                    <p class="card-text">Demografía: <span class="fw-bold">{{volumen.manga.genero.nombre}}</span></p>
+                    <p class="card-text">Editorial: <span
+                            class="fw-bold">{{volumen.manga.editorial.nombre_editorial}}</span></p>
+                </div>
             </div>
-          </div>
+        </div>
+        <div class="recomendaciones text-center mt-5">
+            <h3 class="text-recomendaciones fw-bold">Disfruta más de {{volumen.manga.autor.nombre}}</h3>
+        </div>
     </div>
 </div>
 <app-footer></app-footer>
