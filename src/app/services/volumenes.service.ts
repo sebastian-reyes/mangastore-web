@@ -57,8 +57,8 @@ export class VolumenesService {
     }
   }
 
-  getVolumenesManga(id_vol: number): Observable<Volumen[]> {
-    return this.http.get(`${environment.urlApi}/mangas/${id_vol}`).pipe(
+  getVolumenesManga(nombre_manga: string): Observable<Volumen[]> {
+    return this.http.get(`${environment.urlApi}/mangas/${nombre_manga}`).pipe(
       map((response) => response["volumenes"] as Volumen[]),
       catchError(e => {
         if (this.noAutorizado(e)) {
@@ -68,8 +68,8 @@ export class VolumenesService {
     );
   }
 
-  getManga(id_manga): Observable<Manga> {
-    return this.http.get(`${environment.urlApi}/mangas/${id_manga}`).pipe(
+  getManga(nombre_manga): Observable<Manga> {
+    return this.http.get(`${environment.urlApi}/mangas/${nombre_manga}`).pipe(
       map((response) => response as Manga),
       catchError(e => {
         if (this.noAutorizado(e)) {

@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'demografia/:demo', component: DemografiasComponent },
-  { path: 'catalogo/volumenes/:id', component: VolumenesComponent },
-  { path: 'catalogo/volumen/:nombre_volumen', component: VolumenComponent },
+  { path: 'catalogo/volumenes/:nombre_manga', component: VolumenesComponent },
+  { path: 'catalogo/volumenes/:nombre_manga/:nombre_volumen', component: VolumenComponent },
   { path: 'dashboard', component: DashboardComponent }
 ];
 

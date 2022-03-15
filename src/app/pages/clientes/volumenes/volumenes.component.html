@@ -7,7 +7,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a [routerLink]="['/home']">Home</a></li>
                     <li class="breadcrumb-item"><a
-                            [routerLink]="['/demografia',manga.genero.nombre]">{{manga.genero.nombre}}</a></li>
+                            [routerLink]="['/demografia',manga.genero.nombre.toLowerCase()]">{{manga.genero.nombre}}</a></li>
                     <li class="breadcrumb-item active">{{manga.nombre_manga}}</li>
                 </ol>
             </nav>
@@ -22,7 +22,7 @@
             <div *ngFor="let volumen of volumenes" class="col-sm-3 mt-3">
                 <div class="card mb-3 shadow rounded">
                     <div class="card-body">
-                        <a class="link-producto" [routerLink]="['/catalogo/volumen',volumen.url]">
+                        <a class="link-producto" [routerLink]="['/catalogo/volumenes/',manga.url,volumen.url]">
                             <div class="container-foto mt-2 mb-3">
                                 <img src="http://localhost:9898/api/volumen/foto/{{volumen.id_volumen}}"
                                     alt="{{volumen.nombre_volumen}}" class="img-fluid">

@@ -29,14 +29,14 @@ export class VolumenesComponent implements OnInit {
 
   cargarVolumenes(): void {
     this.activatedRoute.params.subscribe(params => {
-      let id = params['id']
-      if (id) {
-        this.volumenService.getManga(id).subscribe(
+      let nombre_manga = params['nombre_manga']
+      if (nombre_manga) {
+        this.volumenService.getManga(nombre_manga).subscribe(
           response => {
             this.manga = response;
           }
         )
-        this.volumenService.getVolumenesManga(id).subscribe(
+        this.volumenService.getVolumenesManga(nombre_manga).subscribe(
           (response) => {
             this.volumenes = response;
             this.cantidad = this.volumenes.length;

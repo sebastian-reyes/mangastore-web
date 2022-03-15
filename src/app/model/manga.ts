@@ -9,6 +9,7 @@ export class Manga {
     foto: string;
     numero_volumenes: number;
     autor: Autor;
+    url: string;
     genero: Demografia;
     editorial: Editorial;
 }

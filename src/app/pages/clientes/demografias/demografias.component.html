@@ -35,7 +35,7 @@
             <div *ngFor="let manga of mangas" class="col-sm-3">
                 <div class="card mb-3 shadow rounded">
                     <div class="card-body">
-                        <a class="link-producto" [routerLink]="['/catalogo/volumenes',manga.id_manga]">
+                        <a class="link-producto" [routerLink]="['/catalogo/volumenes',manga.url]">
                             <div class="container-foto mt-2 mb-3">
                                 <img src="http://localhost:9898/api/mangas/foto/{{manga.id_manga}}"
                                     alt="{{manga.nombre_manga}}" class="img-fluid">
