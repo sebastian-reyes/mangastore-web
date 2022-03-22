@@ -17,7 +17,7 @@
                 </ul>
             </div>
         </div>
-        <div class="sesion-form">
+        <div *ngIf="registrado" class="sesion-form">
             <div data-aos="zoom-in">
                 <h1 class="text-center fw-bold">Iniciar Sesión</h1>
                 <div class="form-box">
@@ -34,6 +34,46 @@
                             <span>Aún no estás registrado? <span class="login-registro"
                                     (click)="LoginRegistro()">Registrate
                                     aquí</span></span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!registrado" class="sesion-form">
+            <div data-aos="zoom-in">
+                <h1 class="text-center fw-bold">Registrate con nostros</h1>
+                <div class="form-box">
+                    <div class="container col-lg-8">
+                        <form class="needs-validation" method="POST" novalidate>
+                            <div class="row mb-1">
+                                <div class="col-lg-6">
+                                    <label>Nombres:</label>
+                                    <input type="text" [(ngModel)]="nuevoUsuario.nombres" name="nombres"
+                                        class="form-control" placeholder="Nombres" required />
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Apellidos:</label>
+                                    <input type="text" [(ngModel)]="nuevoUsuario.apellidos" name="apellidos"
+                                        class="form-control" placeholder="Apellidos" required />
+                                </div>
+                            </div>
+                            <label>Email:</label>
+                            <input type="text" [(ngModel)]="nuevoUsuario.email" name="email" class="form-control mb-1"
+                                placeholder="Ingrese su correo electrónico" required />
+                            <label>Contraseña:</label>
+                            <input type="password" [(ngModel)]="nuevoUsuario.password" name="passw"
+                                class="form-control mb-1" placeholder="Ingrese su contraseña" required />
+                            <div class="row mb-3">
+                                <div class="col-lg-12">
+                                    <label>Teléfono:</label>
+                                    <input type="text" [(ngModel)]="nuevoUsuario.telefono" name="telefono"
+                                        class="form-control" placeholder="Ingrese su telefono" required />
+                                </div>
+                            </div>
+                            <input class="btn btn-sesion mb-3 w-100" type="submit"
+                                value="Registrate" (click)="registrar()" />
+                            <span>Ya tienes una cuenta? <span class="login-registro" (click)="LoginRegistro()">Inicia
+                                    Sesión</span></span>
                         </form>
                     </div>
                 </div>

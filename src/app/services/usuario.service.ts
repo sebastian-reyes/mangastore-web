@@ -1,7 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
+import { UsuarioRequest } from '../model/usuario-request';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -50,5 +53,12 @@ export class UsuarioService {
     } else {
       return this.HttpHeaders;
     }
+  }
+
+  crearUsuario(usuario: UsuarioRequest): Observable<UsuarioRequest> {
+    return this.http.post<UsuarioRequest>(
+      `${environment.urlApi}/usuarios/registro/cliente`,
+      usuario,
+      { headers: this.HttpHeaders })
   }
 }

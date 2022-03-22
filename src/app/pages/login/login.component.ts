@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
+import { UsuarioRequest } from 'src/app/model/usuario-request';
 import { AuthService } from 'src/app/services/auth.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,10 +15,12 @@ export class LoginComponent implements OnInit {
 
   usuario: Usuario;
   registrado: boolean = true;
+  nuevoUsuario: UsuarioRequest = new UsuarioRequest();
 
   constructor(
     private authService: AuthService,
     private router: Router,
+    private usuarioService: UsuarioService
   ) {
     this.usuario = new Usuario();
   }
@@ -37,7 +41,11 @@ export class LoginComponent implements OnInit {
   }
 
   LoginRegistro() {
-
+    if (this.registrado == true) {
+      this.registrado = false;
+    } else {
+      this.registrado = true;
+    }
   }
 
   login() {
@@ -76,6 +84,22 @@ export class LoginComponent implements OnInit {
         }
       })
     }
+  }
+
+  registrar():void {
+    this.usuarioService.crearUsuario(this.nuevoUsuario).subscribe(
+      response =>{
+        this.router.navigate(['/login']);
+        Swal.fire({
+          title: 'Usuario registrado correctamente',
+          text: 'Gracias por registrarte con nosotros',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.registrado = true;
+      }
+    )
   }
 
 }
