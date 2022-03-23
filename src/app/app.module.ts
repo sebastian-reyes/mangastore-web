@@ -13,6 +13,8 @@ import { FooterComponent } from './pages/clientes/footer/footer.component';
 import { DemografiasComponent } from './pages/clientes/demografias/demografias.component';
 import { VolumenesComponent } from './pages/clientes/volumenes/volumenes.component';
 import { VolumenComponent } from './pages/clientes/volumen/volumen.component';
+import { CarritoComponent } from './pages/clientes/carrito/carrito.component';
+import { BarraDemografiasComponent } from './pages/clientes/barra-demografias/barra-demografias.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { VolumenComponent } from './pages/clientes/volumen/volumen.component';
     FooterComponent,
     DemografiasComponent,
     VolumenesComponent,
-    VolumenComponent
+    VolumenComponent,
+    CarritoComponent,
+    BarraDemografiasComponent
   ],
   imports: [
     BrowserModule,

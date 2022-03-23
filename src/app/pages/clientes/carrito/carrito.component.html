@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div class="container p-4">
+    <h2 class="text-center fw-bold">Carrito de compras</h2>
+    <div class="row">
+        <div class="col-lg-9 position-relative table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">#</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="col-lg-3 p-4">
+            <div class="text-center">
+                <button class="btn btn-danger mb-2">Limpiar carrito</button>
+            </div>
+            <div class="text-center">
+                <a class="btn btn-warning mb-3" [routerLink]="['/home']" >Seguir comprando</a>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <p class="text-center mb-0">Generar Compra</p>
+                </div>
+                <div class="card-body">
+                    <label>Subtotal</label>
+                    <input type="text" class="form-control" readonly>
+                    <label>Descuento</label>
+                    <input type="text" class="form-control" readonly value="S/0.00">
+                    <label>Total a Pagar</label>
+                    <input type="text" class="form-control fw-bold" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="ms-auto btn btn-success">Pagar ahora</button>
+</div>
+<app-footer></app-footer>
