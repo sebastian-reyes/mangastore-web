@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Volumen } from 'src/app/model/volumen';
 import { AuthService } from 'src/app/services/auth.service';
+import { CarritoService } from 'src/app/services/carrito.service';
 import { VolumenesService } from 'src/app/services/volumenes.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-volumen',
@@ -17,7 +19,8 @@ export class VolumenComponent implements OnInit {
     private volumenService: VolumenesService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    public authService: AuthService
+    public authService: AuthService,
+    public carritoService: CarritoService
   ) { }
 
   ngOnInit(): void {
@@ -34,6 +37,17 @@ export class VolumenComponent implements OnInit {
           }
         )
       }
+    })
+  }
+
+  agregarMangaCarrito(volumen: Volumen): void{
+    this.carritoService.agregarProducto(volumen, 1);
+    Swal.fire({
+      title: 'Producto agregado',
+      text: 'El producto fue añadido al carrito.',
+      icon: 'success',
+      showConfirmButton: false,
+      timer: 1000
     })
   }
 

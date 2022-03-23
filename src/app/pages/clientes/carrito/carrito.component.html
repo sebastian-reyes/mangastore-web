@@ -9,12 +9,31 @@
                         <th scope="col">#</th>
                         <th scope="col">Producto</th>
                         <th scope="col">Imagen</th>
-                        <th scope="col">Precio</th>
+                        <th scope="col">Precio Unitario</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Subtotal</th>
                         <th scope="col">Eliminar</th>
                     </tr>
                 </thead>
+                <tbody>
+                    <tr *ngFor="let p of carrito" class="text-center">
+                        <th scope="row">{{carrito.indexOf(p)+1}}</th>
+                        <td>{{p.producto.nombre_volumen}}</td>
+                        <td><img src="http://localhost:9898/api/volumen/foto/{{p.producto.id_volumen}}"
+                                class="img-carrito" alt="img_nombre_prod"></td>
+                        <td>S/.{{p.producto.precio.toFixed(2)}}</td>
+                        <td>
+                            <input type="number" class="form-control form-cantidad" value="{{p.cantidad}}">
+                        </td>
+                        <td>S/.{{(p.producto.precio * p.cantidad).toFixed(2)}}</td>
+                        <td>
+                            <button class="btn btn-danger">
+                                <fa-icon [icon]="iconEliminar">
+                                </fa-icon>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
         <div class="col-lg-3 p-4">

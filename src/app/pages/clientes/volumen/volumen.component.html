@@ -27,8 +27,9 @@
                 <hr />
                 <p>{{volumen.descripcion}}</p>
                 <hr />
-                <button *ngIf="volumen.stock_act > volumen.stock_min" class="btn btn-success">Agregar al
-                    carrito</button>
+                <button *ngIf="volumen.stock_act > volumen.stock_min" (click)="agregarMangaCarrito(volumen)" class="btn btn-success">
+                    Agregar alcarrito
+                </button>
                 <span *ngIf="volumen.stock_act < volumen.stock_min" class="text-danger fw-bold text-agotado">Producto
                     agotado</span>
             </div>
