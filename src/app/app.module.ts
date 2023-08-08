@@ -15,6 +15,8 @@ import { VolumenesComponent } from './pages/clientes/volumenes/volumenes.compone
 import { VolumenComponent } from './pages/clientes/volumen/volumen.component';
 import { CarritoComponent } from './pages/clientes/carrito/carrito.component';
 import { BarraDemografiasComponent } from './pages/clientes/barra-demografias/barra-demografias.component';
+import { SidebarComponent } from './pages/admin/dashboard/sidebar/sidebar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,15 @@ import { BarraDemografiasComponent } from './pages/clientes/barra-demografias/ba
     VolumenesComponent,
     VolumenComponent,
     CarritoComponent,
-    BarraDemografiasComponent
+    BarraDemografiasComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
