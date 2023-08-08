@@ -38,10 +38,10 @@
         </div>
         <div class="col-lg-3 p-4">
             <div class="text-center">
-                <button class="btn btn-danger mb-2">Limpiar carrito</button>
+                <button class="btn btn-danger mb-2" (click)="carritoService.limpiarCarrito()">Limpiar carrito</button>
             </div>
             <div class="text-center">
-                <a class="btn btn-warning mb-3" [routerLink]="['/home']" >Seguir comprando</a>
+                <a class="btn btn-warning mb-3" [routerLink]="['/home']">Seguir comprando</a>
             </div>
             <div class="card">
                 <div class="card-header">
@@ -49,11 +49,11 @@
                 </div>
                 <div class="card-body">
                     <label>Subtotal</label>
-                    <input type="text" class="form-control" readonly>
+                    <input type="text" class="form-control" readonly value="S/.{{subtotal.toFixed(2)}}">
                     <label>Descuento</label>
-                    <input type="text" class="form-control" readonly value="S/0.00">
+                    <input type="text" class="form-control" readonly value="S/{{descuento.toFixed(2)}}">
                     <label>Total a Pagar</label>
-                    <input type="text" class="form-control fw-bold" readonly>
+                    <input type="text" class="form-control fw-bold" readonly value="S/.{{total.toFixed(2)}}">
                 </div>
             </div>
         </div>

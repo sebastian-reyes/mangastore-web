@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { CarritoService } from 'src/app/services/carrito.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class CarritoComponent implements OnInit {
   carrito = [];
   subtotal: number = 0;
   total: number = 0;
+  descuento: number = 0;
+  iconEliminar = faTrash;
 
   constructor(
     public carritoService: CarritoService,
@@ -21,8 +24,8 @@ export class CarritoComponent implements OnInit {
   ngOnInit(): void {
     this.carrito = this.carritoService.listarCarrito();
     for (let i of this.carrito) {
-      this.total = i.producto.precio * i.cantidad + this.total;
+      this.subtotal = (i.producto.precio * i.cantidad) + this.subtotal;
     }
+    this.total = this.subtotal - this.descuento;
   }
-
 }

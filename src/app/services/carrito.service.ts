@@ -19,21 +19,27 @@ export class CarritoService {
     }
   }
 
-  agregarProducto(producto: Volumen, cantidad: number) {
-    this.carrito.push({ producto, cantidad });
-    /*
-    let agregado = false;
-    for (let i of this.carrito) {
-      if (i.producto.id_producto === producto.id_producto) {
-      }else{
-        
-        break;
+  agregarProducto(producto: Volumen, cantidad: number): void {
+    if (this.carrito.length > 0) {
+      let index = -1;
+      for (let i = 0; i < this.carrito.length; i++) {
+        const element = this.carrito[i];
+        if (element.producto.id_volumen === producto.id_volumen) {
+          index = i;
+          break;     
+        }
       }
+      if (index == -1) {
+        this.carrito.push({ producto, cantidad });
+        this.guardarCarrito();
+      } else {
+        let prod = this.carrito[index];
+        prod.cantidad++;
+      }
+    } else {
+      this.carrito.push({ producto, cantidad });
+      this.guardarCarrito();
     }
-    if(ag){
-    }
-    */
-    this.guardarCarrito();
   }
 
   limpiarCarrito() {
@@ -42,7 +48,7 @@ export class CarritoService {
     Swal.fire({
       title: 'Carrito vacío',
       showConfirmButton: false,
-      timer: 1000,
+      timer: 1300,
       icon: 'success'
     });
     window.location.reload();

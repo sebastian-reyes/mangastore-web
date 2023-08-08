@@ -62,6 +62,7 @@ export class AuthService {
   cerrarSesion(): void {
     this._token = null;
     this._usuario = null;
+    localStorage.removeItem('carrito');
     localStorage.clear();
   }
 

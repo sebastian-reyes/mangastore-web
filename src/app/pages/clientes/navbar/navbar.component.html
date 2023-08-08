@@ -19,14 +19,16 @@
                         </li>
                         <li *ngIf="authService.estaAutenticado()" class="nav-item">
                             <a class="nav-link" aria-current="page" [routerLink]="['/carrito']">
+                                <fa-icon [icon] = "iconCarrito"></fa-icon>
                                 Carrito
                             </a>
                         </li>
                         <li *ngIf="authService.estaAutenticado()" class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <span class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
+                                <fa-icon [icon] = "iconProfile"></fa-icon>
                                 {{authService.usuario.nombres}}
-                            </a>
+                        </span>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Mi perfil</a></li>
                                 <li><a class="dropdown-item" href="#">Mis pedidos</a></li>
