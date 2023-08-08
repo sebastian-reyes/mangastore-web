@@ -45,12 +45,6 @@ export class CarritoService {
   limpiarCarrito() {
     this.carrito = [];
     localStorage.removeItem('carrito');
-    Swal.fire({
-      title: 'Carrito vacío',
-      showConfirmButton: false,
-      timer: 1300,
-      icon: 'success'
-    });
     window.location.reload();
     this.listarCarrito();
   }

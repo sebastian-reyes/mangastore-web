@@ -14,6 +14,7 @@ export class DemografiasComponent implements OnInit {
   public mangas: Manga[];
   public cantidad: number;
   public nombre_demografia: string;
+  public descripcion: string;
 
   constructor(
     private productoService: ProductoService,
@@ -32,7 +33,8 @@ export class DemografiasComponent implements OnInit {
       if(demo){
         this.productoService.getDemografia(demo).subscribe(
           response =>{
-            this.nombre_demografia = response.nombre
+            this.nombre_demografia = response.nombre;
+            this.descripcion = response.descripcion;
           }
         )
         this.productoService.getMangasDemografia(demo).subscribe(
