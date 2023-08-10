@@ -61,8 +61,10 @@
                     <input type="text" class="form-control fw-bold" readonly value="S/.{{total.toFixed(2)}}">
                 </div>
             </div>
+            <div class="text-center mt-3">
+                <button class="ms-auto btn btn-success" *ngIf="carrito.length > 0">Pagar ahora</button>
+            </div>
         </div>
     </div>
-    <button class="ms-auto btn btn-success" *ngIf="carrito.length > 0">Pagar ahora</button>
 </div>
 <app-footer></app-footer>
