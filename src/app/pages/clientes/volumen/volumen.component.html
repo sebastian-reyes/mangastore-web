@@ -22,6 +22,13 @@
         </div>
         <div class="col-lg-6 d-flex">
             <div class="align-self-center">
+                <div *ngIf="!authService.estaAutenticado()" class="alert alert-danger alert-dismissible fade show"
+                    role="alert">
+                    <strong>Usted no está autenticado! </strong><a class="text-danger" [routerLink]="['/login']">Inicie
+                        sesión</a>
+                    para poder agregar mangas a su carrito.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
                 <h2 class="fw-bold display-5">{{volumen.nombre_volumen}}</h2>
                 <span class="text-precio fw-bold">S/. {{volumen.precio.toFixed(2)}}</span>
                 <hr />
